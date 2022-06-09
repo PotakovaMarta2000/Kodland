@@ -1,0 +1,25 @@
+body{
+    
+    box-sizing: border-box;
+  }
+  
+  header {
+      width: 100%;
+      height: 200px;
+      background: lightgray;
+  }
+  
+  section {
+      width: 49.7%;
+      display: inline-block;
+      background: gray;
+    height: 400px;
+    margin: 5px 0;
+  }
+  
+  footer {
+      width: 100%;
+      height: 200px;
+      background: lightgray;
+    margin-top: 0px;
+  }

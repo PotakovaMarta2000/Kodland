@@ -1,0 +1,33 @@
+body{
+    text-align: right;
+    overflow: hidden;
+  }
+
+  main{
+      margin-right: -350px;
+  }
+
+  footer{
+    margin-right: -350px;
+  }
+  
+  @keyframes flyOut {
+    from {margin-right: -350px;}
+    50% {margin-right: 350px;}
+    to {margin-right: -350px;}
+    }
+    
+    header{
+    animation: flyOut  2s infinite ease-in-out;
+    
+    }
+    
+    main{
+    animation: flyOut  2s infinite ease-in-out;
+    animation-delay: 0.5s;
+    }
+
+    footer{
+        animation: flyOut  2s infinite ease-in-out;
+        animation-delay: 1s;
+        }

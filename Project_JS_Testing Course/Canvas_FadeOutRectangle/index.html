@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let canvas = document.createElement("canvas"),
+		context = canvas.getContext("2d");
+	canvas.width = 800;
+	canvas.height = 300;
+	canvas.style = `border: 3px solid red;`;
+	
+	document.body.style = `display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	`;
+	document.body.prepend(canvas);
+	
+	function fadeOut(alpha) {
+		// let alpha = 1.0; // непрозрачность 100%
+		let interval = setInterval(function () {
+			canvas.width = canvas.width; // Clears the canvas
+			context.fillStyle = "rgba(0, 0, 255, " + alpha + ")";
+			// context.font = "italic 100px Impact";
+			// context.fillText(text, 0, 100);
+	
+			context.arc(30, 40, 7, 0, Math.PI * 2);
+			context.shadowColor = "darkviolet";
+			context.shadowBlur = 20;
+			context.shadowOffsetX = 0;
+			context.shadowOffsetY = 0;
+	
+			context.fill();
+	
+			alpha = alpha - 0.05; // decrease opacity (fade out)
+			if (alpha < 0) {
+				canvas.width = canvas.width;
+				clearInterval(interval);
+			}
+		}, 100);
+	}
+	
+	fadeOut(context.globalAlpha);
+	</script>
+</body>
+</html>

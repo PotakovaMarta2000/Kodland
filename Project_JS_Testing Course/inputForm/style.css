@@ -1,0 +1,29 @@
+body {
+    margin: 0; /*  убираем лишние отступы  */
+    font-family: 'Courier New', Courier, monospace; /*  шрифт  */
+    font-size: 16px; /*  размер шрифта  */
+}
+
+header {
+    background-color: #315af2; /*  цвет фона  */
+    color: white; /*  цвет текста  */
+    padding: 30px; /*  отступы для содержимого шапки */
+}
+
+main {
+    padding: 30px; /*  отступы для содержимого */
+}
+
+.btn {
+    background-color: #e9399c;
+    color: white; /*  цвет текста  */
+    font-weight: 900; /*  жирный шрифт  */
+    padding: 5px 10px; /*  отступы вовнутрь  */
+    border-radius: 5px; /*  скругление краев кнопки  */
+}
+
+footer {
+    background-color: #383838; /*  цвет фона  */
+    color: white; /*  цвет текста  */
+    padding: 30px; /*  отступы для содержимого подвала */
+}

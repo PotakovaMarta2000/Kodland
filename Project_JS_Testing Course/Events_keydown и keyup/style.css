@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+
+header {
+    background-color: #FFBB1C;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.headerInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: #02314D;
+    font-size: 48px;
+    margin: 0;
+}
+
+main {
+    height: 70vh;
+    background-color: #F2F4F5;
+    padding-top: 80px;
+}
+
+.rez {
+    color: #02314D;
+    font-size: 24px;
+}
+
+.text {
+    border-color: #02314D;
+    color: #02314D;
+    border-radius: 20px;
+    font-size: 24px;
+}
+
+footer {
+    background-color: #181E20; /*  цвет фона  */
+    color: #F2F4F5; /*  цвет текста  */
+    padding: 30px; /*  отступы для содержимого подвала */
+}

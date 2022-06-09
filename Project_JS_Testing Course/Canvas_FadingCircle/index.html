@@ -1,0 +1,58 @@
+<html>
+
+<head>
+	<title>circles</title>
+</head>
+
+<body>
+	<canvas height="400px" width="400px" id="canvas">this text shown if browser does not support html canvas
+	</canvas>
+	<script>
+
+		var canvas = document.getElementById("canvas");
+		canvas.style = `border: 1px black solid;`;
+		var context = canvas.getContext("2d");
+
+		var radius= 0;//
+		var red = 0;
+		var green = 0;
+		var blue = 200;
+
+		function drawCircle() {
+			
+			if (radius < 180) {
+			radius += 1;
+			}
+
+			if (radius > 50) {
+				red = red + 3;
+				blue = blue + 3;
+				green = green + 3;
+			}
+
+
+			//red= red+ 30;
+			//blue= blue+30;
+
+			var rgb = "rgb(" + red + "," + green + "," + blue + ")";
+
+			context.beginPath();
+			var circle = context.arc(200, 200, radius, 0, 2 * Math.PI);
+			context.fill();
+			context.fillStyle = rgb;
+			/* context.stroke(); */
+			if (radius >= 100) {
+				context.clearRect(100, 100, 200, 200);//"очищающий прямоугольник"
+				radius = 0;
+				red = 100;
+				green = 0;
+				blue = 255;
+			}
+		};
+
+		var myInterval = setInterval(drawCircle, 20);
+
+	</script>
+</body>
+
+</html>

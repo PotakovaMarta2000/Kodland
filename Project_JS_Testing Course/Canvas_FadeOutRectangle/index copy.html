@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		let canvas = document.createElement("canvas"),
+			context = canvas.getContext("2d");
+		canvas.width = 1600;
+		canvas.height = 800;
+		canvas.style = `border: 3px solid red;`;
+
+		document.body.style = `display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	`;
+		document.body.prepend(canvas);
+
+		w = canvas.width,
+		h = canvas.height;
+
+		let mouse = {
+			x: 0,
+			y: 0
+		};
+		let draw = false;
+		alpha = 1;
+
+
+
+
+		
+
+
+
+		/* canvas.addEventListener("mousedown", function (e) {
+			alpha = 1;
+
+			function fadeOut(alpha) {
+				
+				let interval = setInterval(function () {
+					//Clears the canvas
+					canvas.width = canvas.width;  
+					
+					alpha -= 0.01;
+					if (alpha < 0) {
+						canvas.width = canvas.width;
+						clearInterval(interval);
+					}
+				}, 800);
+			}
+			fadeOut(alpha);
+
+
+			draw = true;
+			mouse.x = e.pageX - this.offsetLeft;
+			mouse.y = e.pageY - this.offsetTop;
+			context.fillStyle = "rgba(255, 0, 0, " + alpha + ")";
+			context.shadowColor = "darkviolet";
+			context.shadowBlur = 20;
+			context.shadowOffsetX = 0;
+			context.shadowOffsetY = 0;
+			context.beginPath();
+			context.closePath();
+			context.arc(mouse.x, mouse.y, 10, 0, Math.PI * 2);
+
+
+
+			//context.closePath();
+			context.fill();
+
+		}); */
+
+
+		canvas.addEventListener("mousemove", function (e) {
+			alpha = 1;
+			draw = true;
+			if (draw === true) {
+				mouse.x = e.pageX - this.offsetLeft;
+				mouse.y = e.pageY - this.offsetTop;
+				context.beginPath();
+				
+				context.arc(mouse.x, mouse.y, 7, 0, Math.PI * 2);
+				context.closePath();
+				
+				
+
+				context.fillStyle = "rgba(255, 0, 0, " + alpha + ")";
+				// with shadow
+				context.shadowColor = 'darkviolet';
+				context.shadowBlur = 20;
+				context.shadowOffsetX = 0;
+				context.shadowOffsetY = 0;
+				
+				
+				
+				context.fill();
+
+				
+
+			function fadeOut(alpha) {
+				
+				let interval = setInterval(function () {
+					//Clears the canvas
+					/* canvas.width = canvas.width;  */
+					
+					alpha -= 0.01;
+					if (alpha < 0) {
+						/* canvas.width = canvas.width; */
+						clearInterval(interval);
+					}
+				}, 200);
+			}
+			fadeOut(alpha)
+
+			}
+		});
+
+
+
+	</script>
+</body>
+
+</html>
